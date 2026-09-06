@@ -2,6 +2,7 @@ package com.Skillbridge.backend.config;
 
 import com.Skillbridge.backend.security.JwtFilter;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,23 +18,27 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+
+
+import java.util.List;
+
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
 
     private final JwtFilter jwtFilter;
 
-    public SecurityConfig(
-            JwtFilter jwtFilter) {
 
+
+    public SecurityConfig(JwtFilter jwtFilter) {
         this.jwtFilter = jwtFilter;
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-
         return new BCryptPasswordEncoder();
     }
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(
@@ -43,7 +48,8 @@ public class SecurityConfig {
                 // Disable CSRF because we are using JWT
                 .csrf(AbstractHttpConfigurer::disable)
 
-                .cors(cors->{})
+                // Enable CORS configuration
+                .cors(cors -> {})
 
                 // JWT authentication is stateless
                 .sessionManagement(session ->
