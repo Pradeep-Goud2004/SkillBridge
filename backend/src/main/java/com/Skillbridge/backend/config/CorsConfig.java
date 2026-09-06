@@ -33,7 +33,12 @@ public class CorsConfig {
             allowedOrigins.add(frontendUrl);
         }
 
-        configuration.setAllowedOrigins(allowedOrigins);
+        configuration.setAllowedOrigins(
+                List.of(
+                        "http://localhost:5173",
+                        "https://skillbridge-frontend-production.up.railway.app"
+                )
+        );
 
         configuration.setAllowedMethods(
                 List.of(
