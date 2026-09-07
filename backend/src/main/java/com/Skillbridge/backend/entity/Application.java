@@ -39,7 +39,7 @@ public class Application {
     private String resumeUrl;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 30, columnDefinition = "VARCHAR(30)")
     private ApplicationStatus status;
 
     @Column(nullable = false)
