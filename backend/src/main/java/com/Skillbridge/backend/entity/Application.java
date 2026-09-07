@@ -59,6 +59,8 @@ public class Application {
         PENDING,
         SHORTLISTED,
         REJECTED,
-        SELECTED
+        SELECTED,
+        ACCEPTED
+
     }
 }
