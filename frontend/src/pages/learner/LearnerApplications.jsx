@@ -162,7 +162,7 @@ const LearnerApplications = () => {
 
                                             <strong>
                                                 {formatDate(
-                                                    application.createdAt
+                                                    application.appliedAt
                                                 )}
                                             </strong>
                                         </div>
